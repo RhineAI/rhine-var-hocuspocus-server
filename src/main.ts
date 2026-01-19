@@ -20,16 +20,6 @@ const server = new Server({
     new Logger(),
     db.getExtension(),
   ],
-  async onLoadDocument(data) {
-    console.log(`[Server] onLoadDocument: "${data.documentName}"`)
-    return data.document
-  },
-  async onStoreDocument(data) {
-    console.log(`[Server] onStoreDocument: "${data.documentName}"`)
-  },
-  async onChange(data) {
-    console.log(`[Server] onChange: "${data.documentName}", context: ${data.context}`)
-  },
 })
 
 server.listen().then(() => {
