@@ -1,9 +1,9 @@
 {
-  "name": "rhine-var-hocuspocus-simple-server",
+  "name": "rhine-var-hocuspocus-server",
   "scripts": {
     "start": "tsc && node dist/main.js"
   },
-  "version": "2.0.0",
+  "version": "2.0.1",
   "dependencies": {
     "@hocuspocus/extension-database": "^3.4.3",
     "@hocuspocus/extension-logger": "^3.4.3",

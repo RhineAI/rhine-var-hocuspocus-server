@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "rhine-var-hocuspocus-simple-server",
+      "name": "rhine-var-hocuspocus-server",
       "dependencies": {
         "@hocuspocus/extension-database": "^3.4.3",
         "@hocuspocus/extension-logger": "^3.4.3",
