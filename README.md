@@ -1,2 +1,2 @@
 # rhine-var-hocuspocus-server
- A full server for RHINE-VAR
+An example server for RHINE-VAR

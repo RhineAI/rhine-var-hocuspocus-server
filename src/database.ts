@@ -3,7 +3,7 @@ import { fetchPayload, storePayload } from "@hocuspocus/server"
 import { Database as DatabaseExtension } from "@hocuspocus/extension-database"
 
 interface DocumentRow extends RowDataPacket {
-  name: string
+  id: string
   data: Uint8Array<ArrayBufferLike>
 }
 
@@ -37,7 +37,7 @@ export default class Database {
   async fetch({ documentName }: fetchPayload): Promise<Uint8Array<ArrayBufferLike> | null> {
     try {
       const [rows] = await this.pool.execute<DocumentRow[]>(
-        'SELECT data FROM documents WHERE name = ? LIMIT 1',
+        'SELECT data FROM documents WHERE id = ? LIMIT 1',
         [documentName]
       )
       if (rows.length === 0) {
@@ -53,7 +53,7 @@ export default class Database {
   async store({ documentName, state }: storePayload): Promise<void> {
     try {
       await this.pool.execute(
-        'INSERT INTO documents (name, data) VALUES (?, ?) ON DUPLICATE KEY UPDATE data = VALUES(data)',
+        'INSERT INTO documents (id, data) VALUES (?, ?) ON DUPLICATE KEY UPDATE data = VALUES(data)',
         [documentName, state]
       )
     } catch (error) {
