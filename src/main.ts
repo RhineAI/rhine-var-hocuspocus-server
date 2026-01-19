@@ -13,8 +13,8 @@ const db = new Database(
   process.env.DATABASE_NAME as string,
 )
 
-const server = Server.configure({
-  name: "rhine-var-server",
+const server = new Server({
+  name: "rhine-var-hocuspocus-server",
   port: 11600,
   extensions: [
     new Logger(),
@@ -24,6 +24,6 @@ const server = Server.configure({
 
 server.listen().then(() => {
   console.log("Hocuspocus server is running on port 11600")
-}).catch((error) => {
+}).catch((error: unknown) => {
   console.error("Failed to start Hocuspocus server:", error)
 })
