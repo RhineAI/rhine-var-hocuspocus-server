@@ -1,7 +1,7 @@
 {
   "name": "rhine-var-hocuspocus-server",
   "scripts": {
-    "start": "bun run main.ts"
+    "start": "bun run src/main.ts"
   },
   "version": "2.1.0",
   "dependencies": {

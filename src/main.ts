@@ -20,6 +20,10 @@ const server = new Server({
     new Logger(),
     db.getExtension(),
   ],
+  async onAuthenticate({ documentName, token }) {
+    console.log('Authenticate:', documentName, token)
+
+  },
 })
 
 server.listen().then(() => {
